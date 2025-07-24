@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/a12.png" width="200em"></img>
+  <img src="./assets/logo_last.png" width="200em"></img>
 </div>
 <div align="right">
   <img src="./assets/magicgui.jpg" width="600em"></img>
