@@ -1,8 +1,6 @@
+
 <div align="center">
-  <img src="./assets/logo_last.png" width="200em"></img>
-</div>
-<div align="right">
-  <img src="./assets/magicgui.jpg" width="600em"></img>
+  <img src="./assets/MagicGUI_logo.png" width="600em"></img>
 </div>
 <p align="center">
     【English | <a href="README_zh.md">中文</a>】
