@@ -16,8 +16,8 @@
 
 ## News（链接需要修改）
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [click](paper/README.md)
-* [2025-07-20] 🚀🚀🚀 We have open-sourced **MAGICGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
+* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](paper/README.md)
+* [2025-07-20] 🚀🚀🚀 We have open-sourced **M**agic**GUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
 
 ## Overview
 
