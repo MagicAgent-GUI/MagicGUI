@@ -1,10 +1,7 @@
-<div align="left">
-  <img src="./assets/logo_last.png" width="600em"></img>
-</div>
-<div align="right">
-  <img src="./assets/magicgui.jpg" width="600em"></img>
-</div>
 
+<div align="center">
+  <img src="./assets/MagicGUI_logo.png" width="600em"></img>
+</div>
 <p align="center">
     【English | <a href="README_zh.md">中文</a>】
 </p>
@@ -19,30 +16,30 @@
 
 ## News（链接需要修改）
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of AgentCPM-GUI! Check it out [here](https://arxiv.org/abs/2506.01391).
+* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2506.01391).
 * [2025-07-20] 🚀🚀🚀 We have open-sourced **MAGICGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
 
 ## Overview
 
 MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL with 7 billion parameters. It demonstrates outstanding capabilities in visual grounding, screen question answering, and action sequence planning and execution. MagicGUI enables multimodal perception, understanding, and automated execution of user tasks on mobile devices.
 
-Data Collection Framework: Propose a scalable and modular framework for GUI data collection that efficiently gathers high-quality data on mobile devices.
+**Data Collection Framework**: Propose a scalable and modular framework for GUI data collection that efficiently gathers high-quality data on mobile devices.
 
-Powerful Perception and Grounding Capabilities: Enhance the perception and grounding abilities on mobile device screens by integrating large-scale knowledge through tasks such as element referring, element grounding, and screen captioning.
+**Powerful Perception and Grounding Capabilities**: Enhance the perception and grounding abilities on mobile device screens by integrating large-scale knowledge through tasks such as element referring, element grounding, and screen captioning.
 
-Unified Action Space: Develop a comprehensive and unified action space for various mobile platforms, encompassing fundamental operations like Tap, Text Input, and Scroll, while also supporting more complex actions such as Wait, Drag, and Takeover.
+**Unified Action Space**: Develop a comprehensive and unified action space for various mobile platforms, encompassing fundamental operations like Tap, Text Input, and Scroll, while also supporting more complex actions such as Wait, Drag, and Takeover.
 
-Planning-Oriented Reasoning: Implement a planning-oriented reasoning mechanism to improve the stability of task execution and enhance the accuracy of action decisions in dynamic environments.
+**Planning-Oriented Reasoning**: Implement a planning-oriented reasoning mechanism to improve the stability of task execution and enhance the accuracy of action decisions in dynamic environments.
 
-Two-Stage Training Paradigm: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
+**Two-Stage Training Paradigm**: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
 
 ## Quick Start
 
 ### Install dependencies（需要修改）
 
 ```bash
-git clone https://github.com/OpenBMB/AgentCPM-GUI
-cd AgentCPM-GUI
+git clone https://github.com/MagicAgent-GUI/MagicGUI
+cd MagicGUI
 conda create -n gui_agent python=3.11
 conda activate gui_agent
 pip install -r requirements.txt
@@ -64,8 +61,8 @@ model = Qwen2VLChat.from_pretrained(model_path, min_pixels=4*28*28, max_pixels=7
 model = model.to("cuda:0") 
 
 # 2. Build the input
-instruction = "请找出屏幕截图中的选项区，要求距离坐标点<point>(167,84)最近。注意，仅定位最相关的控件即可，以<|box_start|>矩形框<|box_end|>格式输出。输出示例：<|box_start|>(70,58)(125,86)<|box_end|>"
-image_path = "./assets/test_img/grounding.png"
+instruction = "你是一个经过专业训练的手机智能助手，能够协助用户完成逐步导航任务。给你当前智能手机的屏幕截图，以及用户的指令\n\"搜索钓鱼最佳点位\"\n请找出正确的函数以执行用户的指令。请注意，除了函数之外，不要输出任何其他内容。\n你可以使用以下函数来控制智能手机：\n- UI基本操作：\n    1. tap(x: float,y: float)\n    此函数用于在智能手机的屏幕上点击特定位置。坐标 x 和 y 表示待点击控件的中心点。\n    2. scroll(x: float,y: float,direction: str)\n    此函数用于从起始坐标 (x,y) 在智能手机屏幕上进行滑动，手指滑动的方向为指定方向。坐标 x 和 y 表示待滑动控件的中心位置。方向可以是 \"up\"、\"down\"、\"left\" 或 \"right\"。\n    3. text(x: float,y: float,text_input: str)\n    此函数用于在智能手机屏幕上输入指定的文本。坐标 x 和 y 表示待点击控件的中心位置。\n- 手机按键操作：\n    4. navigate_back()\n    此函数用于返回到智能手机的上一个界面。\n    5. navigate_home()\n    此函数用于返回手机的主屏幕或关闭当前应用程序。\n- 其他操作：\n    6. long_press(x: float,y: float)\n    此函数用于在智能手机屏幕上的特定位置执行长按操作。坐标 x 和 y 表示待点击控件的中心位置。\n    7. wait()\n    此函数表示在当前页面保持等待状态。\n    8. enter()\n    此函数表示按下回车键。\n    9. take_over(text_input: str) \n    该函数用于提示用户接管智能手机，其中 text_input 是提示用户接管手机的原因。如果原因不确定，请填写“请您接管当前界面”。\n    10. drag(x1: float,y1: float,x2: float,y2: float)\n    该函数执行一个对起始和终点敏感的拖动操作，表示手指从点1拖到点2。常见的场景包括滑块拖动、滚动选择器拖动和图片裁剪。\n    11. screen_shot()\n    该函数用于截图。\n    12. long_screen_shot()\n    该函数执行长截图。\n    13. call_api(api_name: str,params: str) \n    调用指定的API并传入给定的参数。api_name是API的名称。params包含API所需的输入参数。例如，call_api(Amazon, open)意味着打开亚马逊APP。\n\n如果你发现当前指令无法在当前页面上执行，你需要输出no_answer。如果你发现当前指令已完成，你需要输出action_completed。\n"
+image_path = "./assets/test_action.png"
 
 # 3. Build the message format
 messages = [{"type": "image", "value":f"{image_path}",
@@ -82,7 +79,7 @@ print(response)
 Expected output:
 
 ```JSON
-{"<|box_start|>(48,92)(853,137)<|box_end|>"}
+{"data": "text(919,79,钓鱼最佳点位)", "status": "success"}
 ```
 
 ### Action Space
