@@ -1,4 +1,7 @@
-<div align="center">
+<div align="left">
+  <img src="./assets/logo_last.png" width="600em"></img>
+</div>
+<div align="right">
   <img src="./assets/magicgui.jpg" width="600em"></img>
 </div>
 
