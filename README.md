@@ -9,14 +9,14 @@
 <p align="center">
   <a href="#overview">Overview</a> •
   <a href="#quick-start">Quick Start</a> •
-  <a href="https://huggingface.co/openbmb/AgentCPM-GUI">Model</a> •
+  <a href="https">Model</a> •
   <a href="#evaluation-data">Evaluation Data</a> •
-  <a href="https://arxiv.org/abs/2506.01391">Technical Report</a>
+  <a href="">Technical Report</a>
 </p>
 
 ## News（链接需要修改）
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2506.01391).
+* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [click](paper/README.md)
 * [2025-07-20] 🚀🚀🚀 We have open-sourced **MAGICGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
 
 ## Overview
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ### Download the model
 
-Download [MagicGUI](https://huggingface.co/openbmb/AgentCPM-GUI) .
+Download [MagicGUI](https://huggingface.co) .
 
 #### Huggingface Inference
 
@@ -434,13 +434,8 @@ TM and EM stand for the **Type Match** and **Exact Match**, respectively. All ev
 
 ## Citation
 
-If **AgentCPM-GUI** is useful for your research, please cite:
+If **MagicGUI** is useful for your research, please cite:
 
 ```bibtex
-@article{zhang2025agentcpmgui,
-      title={Agent{CPM}-{GUI}: Building Mobile-Use Agents with Reinforcement Fine-Tuning}, 
-      author={Zhong Zhang and Yaxi Lu and Yikun Fu and Yupeng Huo and Shenzhi Yang and Yesai Wu and Han Si and Xin Cong and Haotian Chen and Yankai Lin and Jie Xie and Wei Zhou and Wang Xu and Yuanheng Zhang and Zhou Su and Zhongwu Zhai and Xiaoming Liu and Yudong Mei and Jianming Xu and Hongyan Tian and Chongyi Wang and Chi Chen and Yuan Yao and Zhiyuan Liu and Maosong Sun},
-      year={2025},
-      journal={arXiv preprint arXiv:2506.01391},
-}
+
 ```
