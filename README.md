@@ -1,7 +1,9 @@
 <div align="center">
   <img src="./assets/magicgui.jpg" width="600em"></img>
 </div>
-
+<div align="right">
+  <img src="./assets/magicgui.jpg" width="600em"></img>
+</div>
 <p align="center">
     【English | <a href="README_zh.md">中文</a>】
 </p>
