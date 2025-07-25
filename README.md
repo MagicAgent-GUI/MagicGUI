@@ -34,6 +34,10 @@ MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL
 
 **Two-Stage Training Paradigm**: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
 
+## Framework
+<div align="center">
+  <img src="./assets/framework.png" width="600em"></img>
+</div>
 
 ## Action Space
 
