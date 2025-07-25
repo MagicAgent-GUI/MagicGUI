@@ -42,7 +42,7 @@ The overall training framework of our MagicGUI contains two stages:
 foundational model on a large and diverse dataset followed by an annealing phase using a balanced and high-quality
 dataset.
 
-**Stage II**: Reinforcement Fine-tuning (RFT),aimed at further enhancing the
+**Stage II**: Reinforcement Fine-tuning (RFT), aimed at further enhancing the
 model’s robustness and generalization capabilities.
 
 <div align="center">
