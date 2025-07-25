@@ -355,5 +355,5 @@ The open-source of our **Magic-RICH dataset** is coming soon.
 
 ## License
 
-* Code in this repository is released under the [Apache-2.0](./LICENSE) license.
+* Code in this repository is released under the [Apache-2.0](./LICENSE.txt) license.
 
