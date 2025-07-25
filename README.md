@@ -9,9 +9,9 @@
 <p align="center">
   <a href="#news">News</a> •
   <a href="#overview">Overview</a> •
-  <a href="action space">Action Space</a> •
+  <a href="action-space">Action Space</a> •
   <a href="#evaluation-data">Evaluation Data</a> •
-  <a href="#performance evaluation">Performance Evaluation</a> •
+  <a href="#performance-evaluation">Performance Evaluation</a> •
 </p>
 
 ## News
@@ -351,11 +351,6 @@ The open-source of our **Magic-RICH dataset** is coming soon.
   </tbody>
 </table>
 
-
-
-> \*Different train/test splits
-
-TM and EM stand for the **Type Match** and **Exact Match**, respectively. All evaluation data and code are open-sourced — see [here](eval) for details.
 
 ## License
 
