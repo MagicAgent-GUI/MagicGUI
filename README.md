@@ -9,9 +9,9 @@
 <p align="center">
   <a href="#news">News</a> •
   <a href="#overview">Overview</a> •
-  <a href="action-space">Action-Space</a> •
-  <a href="#evaluation-data">Evaluation-Data</a> •
-  <a href="#performance-evaluation">Performance-Evaluation</a> •
+  <a href="action space">Action Space</a> •
+  <a href="#evaluation data">Evaluation Data</a> •
+  <a href="#performance evaluation">Performance Evaluation</a> •
 </p>
 
 ## News
