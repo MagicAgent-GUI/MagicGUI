@@ -2,10 +2,11 @@
 <div align="center">
   <img src="./assets/MagicGUI_logo.png" width="600em"></img>
 </div>
+<!--
 <p align="center">
-    【English | <a href="README_zh.md">中文</a>】
+    【English】
 </p>
-
+-->
 <p align="center">
   <a href="#news">News</a> •
   <a href="#overview">Overview</a> •
