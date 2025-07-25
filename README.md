@@ -145,7 +145,7 @@ Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e.
 
 ## Evaluation Data
 
-We provide **Magic-RICH dataset**, an evaluation benchmark for Chinese apps covering**step**, **grounding** and **action** tasks.
+We have developed the **Magic-RICH dataset**, an evaluation benchmark for Chinese apps covering**step**, **grounding** and **action** tasks.
 The open-source of our **Magic-RICH dataset** is coming soon.
 
 
