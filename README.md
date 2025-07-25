@@ -18,7 +18,7 @@
 ## News
 
 * [2025-07-25] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](paper/MAGICGUI.pdf)
-* [2025-07-25] 🚀🚀🚀 The open-source of our **MagicGUI**  is coming soon.
+* The open-source of our **MagicGUI**  is coming soon.
 
 ## Overview
 
