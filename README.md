@@ -167,6 +167,58 @@ The open-source of our **Magic-RICH dataset** is coming soon.
 ## Performance Evaluation
 
 
+### Performance comparison on the Magic-RICH dataset
+<table>
+  <thead>
+    <tr>
+      <th rowspan="1">Agent Models</th>
+      <th colspan="1">ScreenQA-short</th>
+      <th colspan="1">ScreenSpot v2 mobile</th>
+      <th colspan="1">Os-Atlas-mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Closed-source Models -->
+    <tr><td colspan="4"><em>Closed-source Models</em></td></tr>
+    <tr>
+      <td>GPT-4o (Hurst et al., 2024)</td>
+      <td>90.3</td><td>10.6</td><td>4.6</td>
+    </tr>
+    <tr>
+      <td>Gemini 2.0 (Pichai et al., 2024)</td>
+      <td>90.4</td><td>10.6</td><td>5.8</td>
+    </tr>
+    <!-- Open-source Models -->
+    <tr><td colspan="4"><em>Open-source Models</em></td></tr>
+    <tr>
+      <td>InternVL-2-8B (Chen et al., 2024)</td>
+      <td>88.4</td><td>4.2</td><td>2.4</td>
+    </tr>
+    <tr>
+      <td>Qwen2-VL-7B (Wang et al., 2024)</td>
+      <td>92.6</td><td>70.7</td><td>27.2</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL-7B (Bai et al., 2025)</td>
+      <td>92.1</td><td>56.1</td><td>26.6</td>
+    </tr>
+    <tr>
+      <td>UI-TARS-7B (Qin et al., 2025)</td>
+      <td>95.4</td><td>88.6</td><td>82.5</td>
+    </tr>
+    <tr>
+      <td>UI-TARS-1.5-7B (Seed, 2025)</td>
+      <td>93.0</td><td>85.8</td><td>79.3</td>
+    </tr>
+    <!-- MagicGUI -->
+    <tr style="background-color:#e8eafc;">
+      <td>MagicGUI-CPT</td>
+      <td><b>94.6</b></td><td><b>90.2</b></td><td><b>95.2</b></td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 ### Performance comparison on the Magic-RICH dataset
 
