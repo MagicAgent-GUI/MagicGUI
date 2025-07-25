@@ -204,7 +204,7 @@ The open-source of our **Magic-RICH dataset** is coming soon.
     </tr>
     <tr>
       <td>UI-TARS-7B (Qin et al., 2025)</td>
-      <td>95.4</td><td>88.6</td><td>82.5</td>
+      <td><b>95.4</b></td><td>88.6</td><td>82.5</td>
     </tr>
     <tr>
       <td>UI-TARS-1.5-7B (Seed, 2025)</td>
@@ -213,7 +213,7 @@ The open-source of our **Magic-RICH dataset** is coming soon.
     <!-- MagicGUI -->
     <tr style="background-color:#e8eafc;">
       <td>MagicGUI-CPT</td>
-      <td><b>94.6</b></td><td><b>90.2</b></td><td><b>95.2</b></td>
+      <td>94.6</td><td><b>90.2</b></td><td><b>95.2</b></td>
     </tr>
   </tbody>
 </table>
