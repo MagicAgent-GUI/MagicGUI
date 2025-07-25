@@ -7,17 +7,17 @@
 </p>
 
 <p align="center">
+  <a href="#news">News</a> •
   <a href="#overview">Overview</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="https">Model</a> •
+  <a href="action space">Action Space</a> •
   <a href="#evaluation-data">Evaluation Data</a> •
-  <a href="">Technical Report</a>
+  <a href="#performance evaluation">Performance Evaluation</a> •
 </p>
 
-## News（链接需要修改）
+## News
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](paper/MAGICGUI.pdf)
-* [2025-07-20] 🚀🚀🚀 We have open-sourced **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
+* [2025-07-25] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](paper/MAGICGUI.pdf)
+* [2025-07-25] 🚀🚀🚀 The open-source of our **MagicGUI**  is coming soon.
 
 ## Overview
 
@@ -33,54 +33,6 @@ MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL
 
 **Two-Stage Training Paradigm**: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
 
-## Quick Start
-
-### Install dependencies（需要修改）
-
-```bash
-git clone https://github.com/MagicAgent-GUI/MagicGUI
-cd MagicGUI
-conda create -n gui_agent python=3.11
-conda activate gui_agent
-pip install -r requirements.txt
-```
-
-### Download the model
-
-Download [MagicGUI](https://huggingface.co) .
-
-#### Huggingface Inference
-
-```python
-import torch
-from utils.model import Qwen2VLChat
-
-# 1. Load the model and tokenizer
-model_path = "model/MAGICGUI"  # model path
-model = Qwen2VLChat.from_pretrained(model_path, min_pixels=4*28*28, max_pixels=768*28*28)
-model = model.to("cuda:0") 
-
-# 2. Build the input
-instruction = "你是一个经过专业训练的手机智能助手，能够协助用户完成逐步导航任务。给你当前智能手机的屏幕截图，以及用户的指令\n\"搜索钓鱼最佳点位\"\n请找出正确的函数以执行用户的指令。请注意，除了函数之外，不要输出任何其他内容。\n你可以使用以下函数来控制智能手机：\n- UI基本操作：\n    1. tap(x: float,y: float)\n    此函数用于在智能手机的屏幕上点击特定位置。坐标 x 和 y 表示待点击控件的中心点。\n    2. scroll(x: float,y: float,direction: str)\n    此函数用于从起始坐标 (x,y) 在智能手机屏幕上进行滑动，手指滑动的方向为指定方向。坐标 x 和 y 表示待滑动控件的中心位置。方向可以是 \"up\"、\"down\"、\"left\" 或 \"right\"。\n    3. text(x: float,y: float,text_input: str)\n    此函数用于在智能手机屏幕上输入指定的文本。坐标 x 和 y 表示待点击控件的中心位置。\n- 手机按键操作：\n    4. navigate_back()\n    此函数用于返回到智能手机的上一个界面。\n    5. navigate_home()\n    此函数用于返回手机的主屏幕或关闭当前应用程序。\n- 其他操作：\n    6. long_press(x: float,y: float)\n    此函数用于在智能手机屏幕上的特定位置执行长按操作。坐标 x 和 y 表示待点击控件的中心位置。\n    7. wait()\n    此函数表示在当前页面保持等待状态。\n    8. enter()\n    此函数表示按下回车键。\n    9. take_over(text_input: str) \n    该函数用于提示用户接管智能手机，其中 text_input 是提示用户接管手机的原因。如果原因不确定，请填写“请您接管当前界面”。\n    10. drag(x1: float,y1: float,x2: float,y2: float)\n    该函数执行一个对起始和终点敏感的拖动操作，表示手指从点1拖到点2。常见的场景包括滑块拖动、滚动选择器拖动和图片裁剪。\n    11. screen_shot()\n    该函数用于截图。\n    12. long_screen_shot()\n    该函数执行长截图。\n    13. call_api(api_name: str,params: str) \n    调用指定的API并传入给定的参数。api_name是API的名称。params包含API所需的输入参数。例如，call_api(Amazon, open)意味着打开亚马逊APP。\n\n如果你发现当前指令无法在当前页面上执行，你需要输出no_answer。如果你发现当前指令已完成，你需要输出action_completed。\n"
-image_path = "./assets/test_action.png"
-
-# 3. Build the message format
-messages = [{"type": "image", "value":f"{image_path}",
-            {"type": "text", "value":f"{instruction}"]
-
-# 4. Inference
-response = model.generate(
-    message = messages,
-)
-
-print(response)
-```
-
-Expected output:
-
-```JSON
-{"data": "text(919,79,钓鱼最佳点位)", "status": "success"}
-```
 
 ### Action Space
 
@@ -194,31 +146,8 @@ Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e.
 ## Evaluation Data
 
 We provide **Magic-RICH dataset**, an evaluation benchmark for Chinese apps covering**step**, **grounding** and **action** tasks.
-See the dataset on [Hugging Face](https://example.com/dataset-download).
+The open-source of our **Magic-RICH dataset** is coming soon.
 
-## Evaluate
-### 1.Data Download
-Please download the dataset from the subset from the [Magic-RICH dataset](https://example.com/dataset-download) and palce the folders into the .datasets/ directory.
-
-- `assets/`: 
-- `datasets/`: 
-  - `Complex/`：
-  - `Handling_Exception/`：
-  - `Instruction/`：
-  - `Routine`:
-- `utils/`:
-### 2. Param
-We use run_eval.py for evaluation.
-
-- `--data`: Name of a subset from the [Magic-RICH dataset](https://example.com/dataset-download)  
-- `--model`: Path to the model  
-- `--work-dir (str, default to '.')`: Directory to save evaluation results  
-- `--mode (str, default: 'all', choices: ['all', 'infer'])`: If set to "all", the script performs both inference and evaluation; if set to "infer", it performs inference only.
-
-### 3. Run
-```python
-python run_eval.py --data one_grounding --model your_model_path --mode all
-```
 
 ## Performance Evaluation
 
@@ -432,10 +361,3 @@ TM and EM stand for the **Type Match** and **Exact Match**, respectively. All ev
 
 * Code in this repository is released under the [Apache-2.0](./LICENSE) license.
 
-## Citation
-
-If **MagicGUI** is useful for your research, please cite:
-
-```bibtex
-
-```
