@@ -10,6 +10,7 @@
 <p align="center">
   <a href="#news">News</a> •
   <a href="#overview">Overview</a> •
+  <a href="#framework">Framework</a> •
   <a href="#action-space">Action Space</a> •
   <a href="#evaluation-data">Evaluation Data</a> •
   <a href="#performance-evaluation">Performance Evaluation</a> •
@@ -36,7 +37,7 @@ MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL
 
 ## Framework
 <div align="center">
-  <img src="./assets/framework.png" width="600em"></img>
+  <img src="./assets/framework.png" width="800em"></img>
 </div>
 
 ## Action Space
@@ -356,8 +357,8 @@ The open-source of our **Magic-RICH dataset** is coming soon.
   </tbody>
 </table>
 
-
+<!--
 ## License
 
 * Code in this repository is released under the [Apache-2.0](./LICENSE.txt) license.
-
+-->
