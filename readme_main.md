@@ -219,6 +219,9 @@ Please download the dataset from the subset from the [Magic-RICH dataset](https:
   - `Complex/`：
   - `Handing_Exception`:
 - `utils/`:
+
+For the preparation of other open-source datasets, please refer to [Other datasets preparation](README.md)
+
 ### 2. Param
 We use run_eval.py for evaluation.
 
