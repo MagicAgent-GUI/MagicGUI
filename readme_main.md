@@ -12,8 +12,8 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="https://huggingface.co/openbmb/AgentCPM-GUI">Model</a> •
   <a href="#action-space">Action Space</a> •
-  <a href="#evaluation-data">Evaluation Data</a> •
-  <a href="#performance-evaluation">Performance Evaluation</a> •
+  <a href="#evaluation">Evaluation</a> •
+  <a href="#performance-evaluation">Performance</a> •
   <a href="https://arxiv.org/abs/2508.03700">Technical Report</a>
 </p>
 
