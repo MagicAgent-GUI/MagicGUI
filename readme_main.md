@@ -16,7 +16,7 @@
   <a href="https://arxiv.org/abs/2508.03700">Technical Report</a>
 </p>
 
-## News（链接需要修改）
+## News
 
 * [2025-07-20] 📄📄📄 We have released the **technical report** of AgentCPM-GUI! Check it out [here](https://arxiv.org/abs/2508.03700).
 * [2025-07-20] 🚀🚀🚀 We have open-sourced **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
@@ -34,6 +34,20 @@ MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL
 **Planning-Oriented Reasoning**: Implement a planning-oriented reasoning mechanism to improve the stability of task execution and enhance the accuracy of action decisions in dynamic environments.
 
 **Two-Stage Training Paradigm**: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
+
+## Framework
+The overall training framework of our MagicGUI contains two stages:
+
+**Stage I**: Continue Pre-training (CPT), which involves training a
+foundational model on a large and diverse dataset followed by an annealing phase using a balanced and high-quality
+dataset.
+
+**Stage II**: Reinforcement Fine-tuning (RFT), aimed at further enhancing the
+model’s robustness and generalization capabilities.
+
+<div align="center">
+  <img src="./assets/framework.png" width="800em"></img>
+</div>
 
 ## Quick Start
 
