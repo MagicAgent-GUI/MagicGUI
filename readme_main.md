@@ -235,13 +235,16 @@ We use run_eval.py for evaluation.
 
 ### 3. Run
 ```python
+# Referring Benchmark
+python run_eval.py --data ScreenQA-short --model MagicGUI_Path  --mode all --eval_model_path Eval_Model_Path
+python run_eval.py --data ScreenSpot_v2_mobile --model MagicGUI_Path  --mode all
+python run_eval.py --data Os-Atlas-mobile --model MagicGUI_Path  --mode all
+#  Magic-RICH dataset
 python run_eval.py --data Routine --model MagicGUI_Path  --mode all
 python run_eval.py --data Complex --model MagicGUI_Path  --mode all
 python run_eval.py --data Instruction --model MagicGUI_Path  --mode all
 python run_eval.py --data Handling_Exception --model MagicGUI_Path  --mode all
-python run_eval.py --data ScreenQA-short --model MagicGUI_Path  --mode all --eval_model_path Eval_Model_Path
-python run_eval.py --data ScreenSpot_v2_mobile --model MagicGUI_Path  --mode all
-python run_eval.py --data Os-Atlas-mobile --model MagicGUI_Path  --mode all
+#  Open-source AndroidControl and GUI-Odyssey
 python run_eval.py --data AC-Low --model MagicGUI_Path  --mode all
 python run_eval.py --data AC-High --model MagicGUI_Path  --mode all
 python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
@@ -249,7 +252,7 @@ python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
 
 ## Performance Evaluation
 
-### Performance comparison on the Magic-RICH dataset
+### Performance comparison on the Referring Benchmark
 <table>
   <thead>
     <tr>
