@@ -208,12 +208,7 @@ Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e.
 </table>
 
 
-## Evaluation Data
-
-We provide **Magic-RICH dataset**, an evaluation benchmark for Chinese apps covering**step**, **grounding** and **action** tasks.
-See the dataset on [Hugging Face](https://example.com/dataset-download).
-
-## Evaluate
+## Evaluation
 ### 1.Data Download
 Please download the dataset from the subset from the [Magic-RICH dataset](https://example.com/dataset-download) and palce the folders into the .datasets/ directory.
 
