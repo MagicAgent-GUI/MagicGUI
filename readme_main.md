@@ -490,12 +490,6 @@ python run_eval.py --data one_grounding --model your_model_path --mode all
   </tbody>
 </table>
 
-
-
-> \*Different train/test splits
-
-TM and EM stand for the **Type Match** and **Exact Match**, respectively. All evaluation data and code are open-sourced — see [here](eval) for details.
-
 ## License
 
 * Code in this repository is released under the [Apache-2.0](./LICENSE) license.
