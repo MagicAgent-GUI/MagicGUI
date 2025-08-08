@@ -227,7 +227,7 @@ Please download the dataset from the subset from the [Magic-RICH dataset](https:
 ### 2. Param
 We use run_eval.py for evaluation.
 
-- `--data`: Name of a subset from the [Magic-RICH dataset](https://example.com/dataset-download)  
+- `--data`: Name of a eval dataset
 - `--model`: Path to the model  
 - `--work-dir (str, default to '.')`: Directory to save evaluation results  
 - `--mode (str, default: 'all', choices: ['all', 'infer'])`: If set to "all", the script performs both inference and evaluation; if set to "infer", it performs inference only.
