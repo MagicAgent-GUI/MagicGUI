@@ -231,6 +231,7 @@ We use run_eval.py for evaluation.
 - `--model`: Path to the model  
 - `--work-dir (str, default to '.')`: Directory to save evaluation results  
 - `--mode (str, default: 'all', choices: ['all', 'infer'])`: If set to "all", the script performs both inference and evaluation; if set to "infer", it performs inference only.
+- `--eval_model_path (str, default: 'None')`:'Path to eval model (required if data is ScreenQA-short)'
 
 ### 3. Run
 ```python
