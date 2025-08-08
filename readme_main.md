@@ -219,9 +219,10 @@ Please download the dataset from the subset from the [Magic-RICH dataset](https:
 
 - `assets/`: 
 - `datasets/`: 
-  - `Agent_Data_QA_grounding/`：
-  - `one_grounding/`：
-  - `.../`：
+  - `Routine/`：
+  - `Instruction/`：
+  - `Complex/`：
+  - `Handing_Exception`:
 - `utils/`:
 ### 2. Param
 We use run_eval.py for evaluation.
