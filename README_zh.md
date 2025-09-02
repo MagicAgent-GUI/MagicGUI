@@ -10,7 +10,7 @@
   <a href="#概览">概览</a> •
   <a href="#框架">框架</a> •
   <a href="#快速开始">快速开始</a> •
-  <a href="https://github.com/MagicAgent-GUI/MagicGUI/models">模型</a> •
+  <a href="#下载模型">模型</a> •
   <a href="#动作空间">动作空间</a> •
   <a href="#评测">评测</a> •
   <a href="#性能评测">性能对比</a> •
@@ -19,8 +19,9 @@
 
 ## 新闻
 
-* [2025-07-20] 📄📄📄 发布了 **MagicGUI 技术报告**！点击查看 [here](https://arxiv.org/abs/2508.03700)。
-* [2025-07-20] 🚀🚀🚀 开源了 **MagicGUI** —— 一款支持中英文应用、具备 RFT 增强推理能力的端侧 GUI 智能体。
+* [2025-09-01] 🚀🚀🚀 开源了 **MagicGUI**，一个通过RFT增强推理能力，能够在移动设备上操作中文和英文app的GUI agent。
+* [2025-08-20] 📊📊📊 发布了 **Magic-RICH**测试集！点击查看 [here](https://huggingface.co/datasets/GUIAgent/Magic-RICH)。
+* [2025-07-20] 📄📄📄 发布了 **MagicGUI**技术报告！点击查看 [here](https://arxiv.org/abs/2508.03700)。
 
 ## 概览
 
@@ -62,7 +63,9 @@ pip install -r requirements.txt
 
 ### 下载模型
 
-下载 [MagicGUI](https://github.com/MagicAgent-GUI/MagicGUI/models)。
+下载 [MagicGUI_CPT](https://huggingface.co/GUIAgent/MagicGUI_CPT) .
+
+下载 [MagicGUI_RFT](https://huggingface.co/GUIAgent/MagicGUI_RFT) .
 
 #### Huggingface 推理示例
 
