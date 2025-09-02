@@ -1,0 +1,1 @@
+We have released the **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
