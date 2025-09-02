@@ -3,56 +3,54 @@
 </div>
 
 <p align="center">
-    【English | <a href="README_zh.md">中文</a>】
+    【<a href="README.md">English</a> | 中文】
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#framework">Framework</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="https://github.com/MagicAgent-GUI/MagicGUI/models">Model</a> •
-  <a href="#action-space">Action Space</a> •
-  <a href="#evaluation">Evaluation</a> •
-  <a href="#performance-evaluation">Performance</a> •
-  <a href="https://arxiv.org/abs/2508.03700">Technical Report</a>
+  <a href="#概览">概览</a> •
+  <a href="#框架">框架</a> •
+  <a href="#快速开始">快速开始</a> •
+  <a href="https://github.com/MagicAgent-GUI/MagicGUI/models">模型</a> •
+  <a href="#动作空间">动作空间</a> •
+  <a href="#评测">评测</a> •
+  <a href="#性能评测">性能对比</a> •
+  <a href="https://arxiv.org/abs/2508.03700">技术报告</a>
 </p>
 
-## News
+## 新闻
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2508.03700).
-* [2025-07-20] 🚀🚀🚀 We have open-sourced **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
+* [2025-07-20] 📄📄📄 发布了 **MagicGUI 技术报告**！点击查看 [here](https://arxiv.org/abs/2508.03700)。
+* [2025-07-20] 🚀🚀🚀 开源了 **MagicGUI** —— 一款支持中英文应用、具备 RFT 增强推理能力的端侧 GUI 智能体。
 
-## Overview
+## 概览
 
-MagicGUI is an open-source GUI agent model developed by Honor, built on Qwen2-VL with 7 billion parameters. It demonstrates outstanding capabilities in visual grounding, screen question answering, and action sequence planning and execution. MagicGUI enables multimodal perception, understanding, and automated execution of user tasks on mobile devices.
+MagicGUI 是由荣耀研发的开源 GUI 智能体模型，基于 Qwen2-VL（70 亿参数）。它在视觉定位、屏幕问答、动作序列规划与执行方面展现出卓越能力。MagicGUI 能够在移动设备上实现多模态感知、理解与自动化任务执行。
 
-**Data Collection Framework**: Propose a scalable and modular framework for GUI data collection that efficiently gathers high-quality data on mobile devices.
+**数据采集框架**：提出可扩展、模块化的 GUI 数据采集框架，高效获取移动设备上的高质量数据。  
 
-**Powerful Perception and Grounding Capabilities**: Enhance the perception and grounding abilities on mobile device screens by integrating large-scale knowledge through tasks such as element referring, element grounding, and screen captioning.
+**强大的感知与定位能力**：通过元素指代、元素定位、屏幕描述等任务，结合大规模知识提升感知与定位能力。  
 
-**Unified Action Space**: Develop a comprehensive and unified action space for various mobile platforms, encompassing fundamental operations like Tap, Text Input, and Scroll, while also supporting more complex actions such as Wait, Drag, and Takeover.
+**统一动作空间**：为不同移动平台设计统一的动作空间，涵盖点击、输入、滑动等基本操作，同时支持等待、拖拽、接管等复杂动作。  
 
-**Planning-Oriented Reasoning**: Implement a planning-oriented reasoning mechanism to improve the stability of task execution and enhance the accuracy of action decisions in dynamic environments.
+**面向规划的推理机制**：引入规划导向的推理机制，提升任务执行的稳定性与动态环境下动作决策的准确性。  
 
-**Two-Stage Training Paradigm**: Strengthen core perception, localization, and navigation capabilities through Continued Pre-training (CPT), while enhancing model robustness and generalization via Reinforcement Fine-tuning (RFT).
+**双阶段训练范式**：通过持续预训练（CPT）增强核心感知、定位与导航能力，并通过强化微调（RFT）提升模型鲁棒性与泛化能力。  
 
-## Framework
-The overall training framework of our MagicGUI contains two stages:
+## 框架
 
-**Stage I**: Continue Pre-training (CPT), which involves training a
-foundational model on a large and diverse dataset followed by an annealing phase using a balanced and high-quality
-dataset.
+MagicGUI 的整体训练框架分为两个阶段：
 
-**Stage II**: Reinforcement Fine-tuning (RFT), aimed at further enhancing the
-model’s robustness and generalization capabilities.
+**阶段 I**：持续预训练（CPT），先在大规模多样化数据集上训练基础模型，再通过平衡的高质量数据集进行退火训练。  
+
+**阶段 II**：强化微调（RFT），进一步增强模型的鲁棒性与泛化能力。  
 
 <div align="center">
   <img src="./assets/framework.png" width="800em"></img>
 </div>
 
-## Quick Start
+## 快速开始
 
-### Install dependencies（需要修改）
+### 安装依赖（需要修改）
 
 ```bash
 git clone https://github.com/MagicAgent-GUI
@@ -62,31 +60,31 @@ conda activate gui_agent
 pip install -r requirements.txt
 ```
 
-### Download the model
+### 下载模型
 
-Download [MagicGUI](https://github.com/MagicAgent-GUI/MagicGUI/models) .
+下载 [MagicGUI](https://github.com/MagicAgent-GUI/MagicGUI/models)。
 
-#### Huggingface Inference
+#### Huggingface 推理示例
 
 ```python
 import torch
 from utils.model import Qwen2VLChat
 
-# 1. Load the model and tokenizer
-model_path = "./models/RFT"  # model path
+# 1. 加载模型和 tokenizer
+model_path = "./models/RFT"  # 模型路径
 model = Qwen2VLChat.from_pretrained(model_path, min_pixels=4*28*28, max_pixels=768*28*28)
 model = model.to("cuda:0") 
 
-# 2. Build the input
-instruction = """你是一个训练有素的手机智能体，能够帮助用户进行单步导航任务。已知当前智能手机的截图<image>，和用户指令"查看会员信息"请输出正确的函数调用以实现用户指令。除了函数调用之外，你不能输出任何其他内容。你可以调用以下函数来控制智能手机：- UI基础操作：1. tap(x: float,y: float) 该函数用于在智能手机屏幕上点击特定点。坐标 x 和 y 表示待点击控件的中心位置。2. scroll(x: float,y: float,direction: str) 该函数用于从起始坐标 (x,y) 开始在智能手机屏幕上滑动操作，方向为手指滑动的方向。坐标 x 和 y 表示屏幕上待滑动控件的中心位置。方向可以是 "up"、"down"、"left" 或 "right"。3. text(x: float,y: float,text_input: str) 该函数用于在智能手机屏幕上输入指定的text。坐标 x 和 y 表示待点击控件的中心位置。- 手机按键操作：4. navigate_back() 该函数用于返回智能手机的上一个屏幕。5. navigate_home() 该函数用于返回手机的home screen或关闭当前应用。- 其他操作：6. long_press(x: float,y: float) 该函数用于在智能手机屏幕上的特定点执行长按操作。坐标 x 和 y 表示待点击控件的中心位置。7. wait() 该函数表示在当前页面等候。8. enter() 该函数表示按下enter键。9. take_over(text_input: str) 该函数用于提示用户接管智能手机，其中 text_input 是提示用户接管手机的原因。如果原因不确定，请填写“请您接管当前界面”。10. drag(x1: float,y1: float,x2: float,y2: float) 该函数执行一个对起始和终点敏感的拖动操作，表示手指从点1拖到点2。常见的场景包括滑块拖动、滚动选择器拖动和图片裁剪。11. screen_shot() 该函数用于截图。12. long_screen_shot() 该函数执行长截图。13. call_api(api_name: str,params: str) 调用指定的API并传入给定的参数。api_name是API的名称。params包含API所需的输入参数。例如，call_api(Amazon, open)意味着打开亚马逊APP。如果你发现当前指令无法在当前页面上执行，你需要输出no_answer。如果你发现当前指令已完成，你需要输出action_completed。"""
+# 2. 构建输入
+instruction = """你是一个训练有素的手机智能体，能够帮助用户进行单步导航任务。已知当前智能手机的截图<image>，和用户指令"查看会员信息"请输出正确的函数调用以实现用户指令。除了函数调用之外，你不能输出任何其他内容。你可以调用以下函数来控制智能手机：..."""
 
 image_path = "./assets/test_action.png"
 
-# 3. Build the message format
+# 3. 构建消息格式
 messages = [{"type": "image", "value":f"{image_path}",
             {"type": "text", "value":f"{instruction}"]
 
-# 4. Inference
+# 4. 推理
 response = model.generate(
     message = messages,
 )
@@ -94,19 +92,19 @@ response = model.generate(
 print(response)
 ```
 
-Expected output:
+预期输出：
 
 ```JSON
 {"tap(700,964)"}
 ```
 
-### Action Space
+## 动作空间
 
-At each step, the agent outputs is a single JSON object that contains:
-- One (and only one) primitive action, chosen from the list below;
-- Optional modifiers (`duration`, `thought`) and/or a task-level flag (`STATUS`).
+智能体在每一步的输出是一个 JSON 对象，包含：
+- **一个且仅一个**原子动作；
+- 可选修饰符（`duration`, `thought`）和任务级标志（`STATUS`）。
 
-Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e., no extra whitespace), which affects the tokenizer’s behavior.
+注意：所有关键词 **区分大小写**，并使用 **紧凑 JSON**（无多余空格）。
 
 <table>
   <thead>
@@ -160,7 +158,7 @@ Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e.
       <td>–</td>
       <td><code>finish()</code></td>
     </tr>
-    <tr>w
+    <tr>
       <td><b>Wait</b></td>
       <td>Wait for several seconds</td>
       <td>–</td>
@@ -208,50 +206,50 @@ Note that all keywords are **case-sensitive**, and we use **compact JSON** (i.e.
   </tbody>
 </table>
 
+## 评测
 
-## Evaluation
-### 1.Data preparation
-Please download the dataset from the subset from the [Magic-RICH dataset](https://huggingface.co/datasets/GUIAgent/Magic-RICH) and palce the folders into the .datasets/ directory.
+### 1. 数据准备
 
-- `assets/` 
-- `datasets/` 
+请从 [Magic-RICH 数据集](https://example.com/dataset-download) 下载子集，并将其放入 `.datasets/` 目录中。
+
+- `assets/`  
+- `datasets/`  
   - `Routine`
   - `Instruction`
   - `Complex`
   - `Handing_Exception`
 - `utils/`
 
-For the preparation of other open-source datasets, please refer to [Other datasets preparation](datasets/eval_data_process/readme.md).
+其他开源数据集的准备方式请参考 [datasets/eval_data_process/readme.md](datasets/eval_data_process/readme.md)。
 
-### 2. Param
-We use run_eval.py for evaluation.
+### 2. 参数
 
-- `--data`: Name of a eval dataset
-- `--model`: Path to the model  
-- `--work-dir (str, default to '.')`: Directory to save evaluation results  
-- `--mode (str, default: 'all', choices: ['all', 'infer'])`: If set to "all", the script performs both inference and evaluation; if set to "infer", it performs inference only.
-- `--eval_model_path (str, default: 'None')`:'Path to eval model (required if mode is 'all' and data is 'ScreenQA-short')'
+我们使用 `run_eval.py` 进行评测。
 
-### 3. Run
+- `--data`: 数据集名称  
+- `--model`: 模型路径  
+- `--work-dir`: 保存评测结果的目录（默认 `.`）  
+- `--mode`: 执行模式（默认 `all`，可选 `all` 或 `infer`）  
+- `--eval_model_path`: 评测模型路径（当 `mode=all` 且 `data=ScreenQA-short` 时必填）  
+
+### 3. 运行示例
+
 ```python
-# Referring Benchmark
 python run_eval.py --data ScreenQA-short --model MagicGUI_Path  --mode all --eval_model_path Eval_Model_Path
 python run_eval.py --data ScreenSpot_v2_mobile --model MagicGUI_Path  --mode all
 python run_eval.py --data Os-Atlas-mobile --model MagicGUI_Path  --mode all
-# Magic-RICH dataset
 python run_eval.py --data Routine --model MagicGUI_Path  --mode all
 python run_eval.py --data Complex --model MagicGUI_Path  --mode all
 python run_eval.py --data Instruction --model MagicGUI_Path  --mode all
 python run_eval.py --data Handling_Exception --model MagicGUI_Path  --mode all
-# Open-source AndroidControl and GUI-Odyssey
 python run_eval.py --data AC-Low --model MagicGUI_Path  --mode all
 python run_eval.py --data AC-High --model MagicGUI_Path  --mode all
 python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
 ```
 
-## Performance Evaluation
+## 性能评测
 
-### Performance comparison on the Referring Benchmark
+### 基准数据集对比
 <table>
   <thead>
     <tr>
@@ -303,7 +301,7 @@ python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
 </table>
 
 
-### Performance comparison on the Magic-RICH dataset
+### Magic-RICH 数据集对比
 
 <table>
   <thead>
@@ -412,7 +410,7 @@ python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
 
 
 
-### Performance comparison on open-source AndroidControl and GUI-Odyssey datasets. 
+### 在开源的AndroidControl and GUI-Odyssey datasets上的对比. 
 
 <table>
   <thead>
@@ -503,13 +501,13 @@ python run_eval.py --data GUI-Odyssey --model MagicGUI_Path  --mode all
   </tbody>
 </table>
 
-## License
+## 许可协议
 
-* This project is licensed under the [Apache-2.0](./LICENSE) license. The model weights are fully open for academic research, and commercial use licenses can be applied for by contacting magicgui@honor.com. This project uses the pre-trained Qwen2VL-7B-Instruct for initialization, which is also licensed under the Apache- 2.0 License.
+* 本项目基于 [Apache-2.0](./LICENSE) 协议开源。模型权重完全开放供学术研究使用，商业使用需联系 magicgui@honor.com 获取授权。本项目使用了 Qwen2VL-7B-Instruct 作为初始化模型，该模型同样遵循 Apache-2.0 协议。
 
-## Citation
+## 引用
 
-If **MagicGUI** is useful for your research, please cite:
+如果 **MagicGUI** 对您的研究有帮助，请引用：
 
 ```bibtex
 @article{tang2025magicguifoundationalmobilegui,
@@ -522,3 +520,4 @@ If **MagicGUI** is useful for your research, please cite:
       url={https://arxiv.org/abs/2508.03700}, 
 }
 ```
+
