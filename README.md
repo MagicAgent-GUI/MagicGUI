@@ -20,7 +20,7 @@
 ## News
 
 * [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2508.03700).
-* [2025-07-20] 🚀🚀🚀 We have open-sourced **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
+* [2025-09-01] 🚀🚀🚀 We have released the **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
 
 ## Overview
 
@@ -52,7 +52,7 @@ model’s robustness and generalization capabilities.
 
 ## Quick Start
 
-### Install dependencies（需要修改）
+### Install dependencies
 
 ```bash
 git clone https://github.com/MagicAgent-GUI
@@ -62,10 +62,10 @@ conda activate gui_agent
 pip install -r requirements.txt
 ```
 
-### Download the model
+### Download the MagicGUI 
 
-Download [MagicGUI](https://github.com/MagicAgent-GUI/MagicGUI/models) .
-
+Download [MagicGUI_CPT](https://huggingface.co/GUIAgent/MagicGUI_CPT) .
+Download [MagicGUI_RFT](https://huggingface.co/GUIAgent/MagicGUI_RFT) .
 #### Huggingface Inference
 
 ```python
