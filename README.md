@@ -19,8 +19,10 @@
 
 ## News
 
-* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2508.03700).
 * [2025-09-01] 🚀🚀🚀 We have released the **MagicGUI**, an on-device GUI agent capable of operating Chinese & English apps and equipped with RFT-enhanced reasoning abilities.
+* [2025-08-20] 📊📊📊 We have released the  **Magic-RICH**! Check it out [here](https://huggingface.co/datasets/GUIAgent/Magic-RICH)。
+* [2025-07-20] 📄📄📄 We have released the **technical report** of MagicGUI! Check it out [here](https://arxiv.org/abs/2508.03700).
+
 
 ## Overview
 
