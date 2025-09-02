@@ -65,6 +65,7 @@ pip install -r requirements.txt
 ### Download the MagicGUI 
 
 Download [MagicGUI_CPT](https://huggingface.co/GUIAgent/MagicGUI_CPT) .
+
 Download [MagicGUI_RFT](https://huggingface.co/GUIAgent/MagicGUI_RFT) .
 #### Huggingface Inference
 
