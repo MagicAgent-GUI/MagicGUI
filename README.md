@@ -10,7 +10,7 @@
   <a href="#overview">Overview</a> •
   <a href="#framework">Framework</a> •
   <a href="#quick-start">Quick Start</a> •
-  <a href="#Download the MagicGUI">Model</a> •
+  <a href="#download-the-magicgui">Model</a> •
   <a href="#action-space">Action Space</a> •
   <a href="#evaluation">Evaluation</a> •
   <a href="#performance-evaluation">Performance</a> •
