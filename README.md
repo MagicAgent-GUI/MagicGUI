@@ -10,7 +10,7 @@
   <a href="#overview">Overview</a> •
   <a href="#framework">Framework</a> •
   <a href="#quick-start">Quick Start</a> •
-  <a href="https://github.com/MagicAgent-GUI/MagicGUI/models">Model</a> •
+  <a href="https://huggingface.co/GUIAgent/MagicGUI_RFT">Model</a> •
   <a href="#action-space">Action Space</a> •
   <a href="#evaluation">Evaluation</a> •
   <a href="#performance-evaluation">Performance</a> •
