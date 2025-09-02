@@ -213,7 +213,7 @@ print(response)
 
 ### 1. 数据准备
 
-请从 [Magic-RICH 数据集](https://example.com/dataset-download) 下载子集，并将其放入 `.datasets/` 目录中。
+请从 [Magic-RICH 数据集](https://huggingface.co/datasets/GUIAgent/Magic-RICH) 下载子集，并将其放入 `.datasets/` 目录中。
 
 - `assets/`  
 - `datasets/`  
