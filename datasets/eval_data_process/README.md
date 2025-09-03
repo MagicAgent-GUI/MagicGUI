@@ -44,6 +44,7 @@ Download and unzip[mobile_images.zip](https://huggingface.co/datasets/OS-Copilot
 ```
 cd MagicGUI/datasets/eval_data_process
 python process_os_atlas.py.py
+```
 
 ## Gui-odyssey
 
