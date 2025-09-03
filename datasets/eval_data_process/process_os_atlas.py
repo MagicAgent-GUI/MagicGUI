@@ -5,7 +5,7 @@ from pathlib import Path
 current_script_path = Path(os.path.abspath(__file__))
 
 source_dir = current_script_path.parent / 'tmp' / 'Os-Atlas-mobile'
-source_images_dir = source_dir / 'images'
+source_images_dir = source_dir / 'mobile_images'
 json_path = source_dir / 'aw_mobile.json'
 
 output_dir = current_script_path.parent.parent / 'Os-Atlas-mobile'
