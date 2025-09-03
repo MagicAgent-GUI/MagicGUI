@@ -22,15 +22,6 @@ cd MagicGUI/datasets/eval_data_process
 python process_android_control.py
 ```
 
-## Gui-odyssey
-
-Download [GUI-Odyssey](https://github.com/OpenGVLab/GUI-Odyssey?tab=readme-ov-file) and save at ``MagicGUI/datasets/eval_data_process/tmp/GUI-Odyssey``
-
-```
-cd MagicGUI/datasets/eval_data_process
-python process_odyssey.py
-```
-
 ## ScreenQA-Short
 
 Download [test-00000-of-00002.parquet](https://huggingface.co/datasets/rootsautomation/RICO-ScreenQA-Short/blob/main/data/test-00000-of-00002.parquet) and [test-00001-of-00002.parquet](https://huggingface.co/datasets/rootsautomation/RICO-ScreenQA-Short/blob/main/data/test-00001-of-00002.parquet) of ScreenQA-Short and save at ``MagicGUI/datasets/eval_data_process/tmp/ScreenQA-short``
@@ -53,3 +44,12 @@ Download and unzip[mobile_images.zip](https://huggingface.co/datasets/OS-Copilot
 ```
 cd MagicGUI/datasets/eval_data_process
 python process_os_atlas.py.py
+
+## Gui-odyssey
+
+Download [GUI-Odyssey](https://github.com/OpenGVLab/GUI-Odyssey?tab=readme-ov-file) and save at ``MagicGUI/datasets/eval_data_process/tmp/GUI-Odyssey``
+
+```
+cd MagicGUI/datasets/eval_data_process
+python process_odyssey.py
+```
